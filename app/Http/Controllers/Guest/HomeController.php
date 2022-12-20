@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $data = [
             "trains" => Train::all(),
-            "today_trains" => Train::where('departure_time', '>=', date('Y-m-d'))->where('departure_time', '<=', date('Y-m-d', strtotime('+1 day')))->get()
+            "today_trains" => Train::where('departure_time', '>=', now())->get()
         ];
         return view('trains.index', $data);
     }
