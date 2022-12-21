@@ -13,7 +13,7 @@ class Helpers
             exit("Can not Open File");
         }
 
-        while (($row = fgetcsv($file_stream)) != false) {
+        while (($row = fgetcsv($file_stream)) !== false) {
             $data[] = $row;
         }
 
